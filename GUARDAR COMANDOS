@@ -1,0 +1,6 @@
+<Button
+type="link"
+to="/endereco"
+title="descricao do link">
+Link
+</Button>
