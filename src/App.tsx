@@ -1,12 +1,13 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import GlobalCss from './styles'
 import Home from './pages/Home'
-import Store from './pages/Home'
+import LaDolce from './pages/LaDolce'
+import Footer from './components/Footer'
 
 const Rotas = () => (
   <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/store" element={<Store />} />
+    <Route path="/ladolce" element={<LaDolce />} />
   </Routes>
 )
 
@@ -18,6 +19,7 @@ function App() {
 
         <Rotas />
       </BrowserRouter>
+      <Footer />
     </>
   )
 }

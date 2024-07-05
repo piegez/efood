@@ -8,7 +8,7 @@ export const RatingContainer = styled.div`
   padding: 4px 6px;
   display: flex;
   margin-right: 8px;
-  margin-left: 409px;
+  margin-left: 400px;
   position: absolute;
   img {
     margin-left: 8px;
