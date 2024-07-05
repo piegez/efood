@@ -24,7 +24,7 @@ export const Header2Content = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1366px;
+  max-width: 1024px;
 `
 
 export const LinkRest = styled.a`

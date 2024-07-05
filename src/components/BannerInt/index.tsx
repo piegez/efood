@@ -3,7 +3,8 @@ import {
   Descricao,
   Imagem,
   StyleBannerInt,
-  Titulo
+  Titulo,
+  MainContent
 } from './styles'
 
 export type Props = {
@@ -14,16 +15,18 @@ export type Props = {
 
 const BannerInt = ({ title, description, image }: Props) => (
   <>
-    <StyleBannerInt>
-      <Imagem>
-        <img src={image} alt="La Dolce" />
-        <ImageContent>
-          {' '}
-          <Descricao>{description}</Descricao>
-          <Titulo>{title}</Titulo>
-        </ImageContent>
-      </Imagem>
-    </StyleBannerInt>
+    <MainContent>
+      <StyleBannerInt>
+        <Imagem>
+          <img src={image} alt="La Dolce" />
+          <ImageContent>
+            {' '}
+            <Descricao>{description}</Descricao>
+            <Titulo>{title}</Titulo>
+          </ImageContent>
+        </Imagem>
+      </StyleBannerInt>
+    </MainContent>
   </>
 )
 
