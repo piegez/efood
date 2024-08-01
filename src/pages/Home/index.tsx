@@ -40,7 +40,7 @@ const pratos: Restaurant[] = [
     title: 'Chez Pierre',
     rating: '5,0',
     description:
-      'Conhecido por sua elegância e sofisticação, o Chez Pierre combina a tradição culinária francesa com ingredientes locais frescos, oferecendo desde foie gras até crème brûlée impecavelmente preparados.',
+      'Conhecido por sua elegância e sofisticação, o Chez Pierre combina a tradição culinária francesa com ingredientes locais frescos, oferecendo desde foie gras até crème brûlée impecavelmente preparados. Peça já o seu prato e acompanhamento.',
     image: french,
     infos: ['Francesa'],
     link: '/'
@@ -49,7 +49,7 @@ const pratos: Restaurant[] = [
     title: 'Sabor Mexicano',
     rating: '4,3',
     description:
-      'Um ponto de encontro vibrante para os amantes da culinária mexicana. Do guacamole fresco às enchiladas suculentas, cada prato é uma explosão de sabores autênticos.',
+      'Um ponto de encontro vibrante para os amantes da culinária mexicana. Do guacamole fresco às enchiladas suculentas, cada prato é uma explosão de sabores autênticos. Peça já o seu prato e acompanhamento, além da sobremesa.',
     image: mexican,
     infos: ['Mexicana'],
     link: '/'
