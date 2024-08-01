@@ -19,12 +19,10 @@ const BannerInt = ({ title, description, image }: Props) => (
       <StyleBannerInt>
         <Imagem>
           <img src={image} alt="La Dolce" />
-          <ImageContent>
-            {' '}
-            <Descricao>{description}</Descricao>
-            <Titulo>{title}</Titulo>
-          </ImageContent>
         </Imagem>
+        <ImageContent>
+          <Descricao>{description}</Descricao> <Titulo>{title}</Titulo>
+        </ImageContent>
       </StyleBannerInt>
     </MainContent>
   </>
