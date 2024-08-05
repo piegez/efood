@@ -22,7 +22,7 @@ export const StyleBannerInt = styled.div`
 
 export const Imagem = styled.div`
   width: 100%;
-  height: auto;
+  height: 280px;
   position: relative;
   display: flex;
   justify-content: center;
