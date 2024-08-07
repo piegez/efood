@@ -1,20 +1,22 @@
-import FoodItem from '../../models/FoodItem'
+import { Rest } from '../../pages/Home'
+import { Cardapio } from '../../pages/LaDolce'
 import ProductItem from '../ProductStore'
 import { Container, List } from './styles'
 export type Props = {
-  restaurante: FoodItem[]
+  menu: Cardapio[]
 }
-const ProductListStore = ({ restaurante }: Props) => (
+
+const ProductListStore = ({ menu }: Props) => (
   <Container>
     <div className="container">
       <List>
-        {restaurante.map((restaurante) => (
+        {menu.map((menu) => (
           <ProductItem
-            key={restaurante.title}
-            description={restaurante.description}
-            image={restaurante.image}
-            title={restaurante.title}
-            link={restaurante.link}
+            key={menu.nome}
+            description={menu.descricao}
+            image={menu.foto}
+            title={menu.nome}
+            link={''}
           />
         ))}
       </List>
