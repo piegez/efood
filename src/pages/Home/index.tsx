@@ -6,11 +6,11 @@ export type Rest = {
   id: number
   titulo: string
   destacado?: boolean
-  tipo: string[]
+  tipo: string
   avaliacao: string
   descricao: string
   capa: string
-  carpadio: {
+  cardapio: {
     foto: string
     preco: number
     id: number

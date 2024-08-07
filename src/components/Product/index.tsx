@@ -6,7 +6,7 @@ import { Card, Descricao, Infos, Titulo } from './styles'
 type Props = {
   title: string
   description: string
-  infos: string[]
+  infos: string
   image: string
   rating: string
   link: string
@@ -15,9 +15,7 @@ const Product = ({ title, description, infos, image, rating }: Props) => (
   <Card>
     <img src={image} alt={title} />
     <Infos>
-      {infos.map((info) => (
-        <Tag key={info}>{info}</Tag>
-      ))}
+      <Tag key={infos}>{infos}</Tag>
     </Infos>
     <Rating>{rating}</Rating>
     <Titulo>{title}</Titulo>
