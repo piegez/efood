@@ -1,7 +1,7 @@
 import { ButtonLink } from '../Button/styles'
 import Rating from '../Rating'
 import Tag from '../Tags'
-import { Card, Descricao, Infos, Titulo } from './styles'
+import { Card, Descricao, Infos, Titulo, Image } from './styles'
 
 type Props = {
   title: string
@@ -9,21 +9,31 @@ type Props = {
   infos: string
   image: string
   rating: string
-  link: string
+  id: number
 }
-const Product = ({ title, description, infos, image, rating }: Props) => (
-  <Card>
-    <img src={image} alt={title} />
-    <Infos>
-      <Tag key={infos}>{infos}</Tag>
-    </Infos>
-    <Rating>{rating}</Rating>
-    <Titulo>{title}</Titulo>
-    <Descricao>{description}</Descricao>
-    <ButtonLink type="link" title="Saiba mais">
-      Saiba mais
-    </ButtonLink>
-  </Card>
-)
+const Product = ({ title, description, infos, image, rating }: Props) => {
+  const getDescricao = (descricao: string) => {
+    if (descricao.length > 248) {
+      return descricao.slice(0, 240) + '...'
+    }
+    return descricao
+  }
+  return (
+    <Card>
+      <Image>
+        <img src={image} alt={title} />
+      </Image>
+      <Infos>
+        <Tag key={infos}>{infos}</Tag>
+      </Infos>
+      <Rating>{rating}</Rating>
+      <Titulo>{title}</Titulo>
+      <Descricao>{getDescricao(description)}</Descricao>
+      <ButtonLink type="link" title="Saiba mais">
+        Saiba mais
+      </ButtonLink>
+    </Card>
+  )
+}
 
 export default Product

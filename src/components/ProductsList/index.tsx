@@ -10,14 +10,14 @@ const ProductList = ({ restaurante }: Props) => (
     <div className="container">
       <List>
         {restaurante.map((restaurante) => (
+          // eslint-disable-next-line react/jsx-key
           <Product
-            key={restaurante.titulo}
             description={restaurante.descricao}
             image={restaurante.capa}
             infos={restaurante.tipo}
             title={restaurante.titulo}
             rating={restaurante.avaliacao}
-            link={''}
+            id={restaurante.id}
           />
         ))}
       </List>

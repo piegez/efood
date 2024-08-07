@@ -40,3 +40,11 @@ export const Infos = styled.div`
   top: 16px;
   right: 16px;
 `
+export const Image = styled.div`
+  img {
+    width: 100%;
+    width: 472px;
+    height: 217px;
+    object-fit: cover;
+  }
+`
