@@ -11,7 +11,7 @@ type Props = {
   rating: string
   id: number
 }
-const Product = ({ title, description, infos, image, rating }: Props) => {
+const Product = ({ title, description, infos, image, rating, id }: Props) => {
   const getDescricao = (descricao: string) => {
     if (descricao.length > 248) {
       return descricao.slice(0, 240) + '...'
@@ -29,7 +29,7 @@ const Product = ({ title, description, infos, image, rating }: Props) => {
       <Rating>{rating}</Rating>
       <Titulo>{title}</Titulo>
       <Descricao>{getDescricao(description)}</Descricao>
-      <ButtonLink type="link" title="Saiba mais">
+      <ButtonLink type="link" to={`/restaurantes/${id}`} title="Saiba mais">
         Saiba mais
       </ButtonLink>
     </Card>

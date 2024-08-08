@@ -6,32 +6,20 @@ type Props = {
   title: string
   description: string
   image: string
-  link: string
+  id: number
 }
 
-const mock: Props[] = [
-  {
-    title: 'teste',
-    description: 'teste',
-    image: 'teste',
-    link: 'teste'
-  }
-]
-const ProductItem = ({ link }: Props) => (
+const ProductItem = ({ title, description, image, id }: Props) => (
   <Card>
-    {mock.map((media, index) => (
-      <>
-        <Image>
-          <img src={media.image} alt={media.title} />
-          <Action>
-            <img src={zoom} alt="Clique para maximizar" />
-          </Action>
-        </Image>
-        <Titulo>{media.title}</Titulo>
-        <Descricao>{media.description}</Descricao>
-      </>
-    ))}
-    <ButtonLink type="link" to={link} title="Saiba mais">
+    <Image>
+      <img src={image} alt={title} />
+      <Action>
+        <img src={zoom} alt="Clique para maximizar" />
+      </Action>
+    </Image>
+    <Titulo>{title}</Titulo>
+    <Descricao>{description}</Descricao>
+    <ButtonLink type="link" title="Adicionar ao carrinho">
       Adicionar ao carrinho
     </ButtonLink>
   </Card>

@@ -1,9 +1,9 @@
 import { Rest } from '../../pages/Home'
-import { Cardapio } from '../../pages/LaDolce'
 import ProductItem from '../ProductStore'
 import { Container, List } from './styles'
+
 export type Props = {
-  menu: Cardapio[]
+  menu: Rest[]
 }
 
 const ProductListStore = ({ menu }: Props) => (
@@ -12,11 +12,11 @@ const ProductListStore = ({ menu }: Props) => (
       <List>
         {menu.map((menu) => (
           <ProductItem
-            key={menu.nome}
-            description={menu.descricao}
-            image={menu.foto}
-            title={menu.nome}
-            link={''}
+            key={''}
+            description={menu.cardapio.descricao}
+            image={menu.cardapio.foto}
+            title={menu.cardapio.nome}
+            id={menu.cardapio.id}
           />
         ))}
       </List>
