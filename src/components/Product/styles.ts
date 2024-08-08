@@ -48,3 +48,13 @@ export const Image = styled.div`
     object-fit: cover;
   }
 `
+
+export const Destaque = styled.div`
+  background-color: ${cores.laranja};
+  color: ${cores.amareloClaro};
+  font-size: '12px';
+  weight: 700;
+  padding: 4px 6px;
+  display: inline-block;
+  margin-left: 8px;
+`

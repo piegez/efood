@@ -9,15 +9,16 @@ const ProductList = ({ restaurante }: Props) => (
   <Container>
     <div className="container">
       <List>
-        {restaurante.map((restaurante) => (
-          // eslint-disable-next-line react/jsx-key
+        {restaurante.map((restaurante, index) => (
           <Product
+            key={restaurante.id}
             description={restaurante.descricao}
             image={restaurante.capa}
             infos={restaurante.tipo}
             title={restaurante.titulo}
             rating={restaurante.avaliacao}
             id={restaurante.id}
+            destacado={index === 0}
           />
         ))}
       </List>
