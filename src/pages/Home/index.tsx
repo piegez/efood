@@ -3,6 +3,7 @@ import ProductList from '../../components/ProductsList'
 import { useEffect, useState } from 'react'
 
 export type Rest = {
+  map(arg0: (menu: any) => void): import('react').ReactNode
   id: number
   titulo: string
   destacado?: boolean
@@ -10,14 +11,17 @@ export type Rest = {
   avaliacao: string
   descricao: string
   capa: string
-  cardapio: {
-    foto: string
-    preco: number
-    id: number
-    nome: string
-    descricao: string
-    porcao: string
-  }
+  cardapio: Cardapio[]
+}
+
+interface Cardapio {
+  capa: string
+  foto: string
+  preco: number
+  id: number
+  nome: string
+  descricao: string
+  porcao: string
 }
 
 const Home = () => {

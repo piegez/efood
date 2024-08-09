@@ -1,7 +1,4 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
-import { TagContainer } from '../Tags/styles'
-import { ButtonLink } from '../Button/styles'
 
 export const Container = styled.section``
 

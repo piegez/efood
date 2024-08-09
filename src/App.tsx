@@ -7,7 +7,7 @@ import Product from './pages/Cardapio'
 const Rotas = () => (
   <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/restaurantes/:id" element={<Product />} />
+    <Route path="/:id/:id" element={<Product />} />
   </Routes>
 )
 
