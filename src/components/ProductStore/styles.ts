@@ -1,10 +1,13 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
 import { ButtonLink } from '../Button/styles'
+import { Props } from '../Button'
+import { Link } from 'react-router-dom'
 
 export const Card = styled.div`
   background-color: ${cores.laranja};
   margin-bottom: 32px;
+  padding: 8px;
 
   ${ButtonLink} {
     font-size: 14px;
@@ -13,7 +16,6 @@ export const Card = styled.div`
     background-color: ${cores.amarelo};
     width: 304px;
     height: 24px;
-    margin: 0px 0px 8px 8px;
     display: inline-block;
   }
 `
@@ -24,7 +26,7 @@ export const Capa = styled.div`
     width: 100%;
     height: 100%;
     max-width: 304px;
-    height: 167px;
+    height: 168px;
     object-fit: cover;
   }
 `
@@ -33,7 +35,7 @@ export const Action = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 98%;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
@@ -42,10 +44,6 @@ export const Action = styled.div`
 `
 export const Image = styled.div`
   position: relative;
-
-  img {
-    padding: 8px 0px 8px 8px;
-  }
 
   &:hover {
     ${Action} {
@@ -58,7 +56,7 @@ export const Image = styled.div`
 export const Titulo = styled.h3`
   font-size: 16px;
   display: block;
-  margin-left: 8px;
+  padding: 8px 0px 8px 0px;
   color: ${cores.amarelo};
 `
 
@@ -68,7 +66,7 @@ export const Descricao = styled.p`
   line-height: 22px;
   display: block;
   max-width: 304px;
-  padding: 8px 0px 8px 8px;
+  padding-bottom: 8px;
   color: ${cores.amarelo};
 `
 export const Modal = styled.div`
@@ -99,31 +97,35 @@ export const Modal = styled.div`
 export const ModalContent = styled.div`
   z-index: 1;
   background-color: ${cores.laranja};
-  padding: 32px;
-  display: flex;
+  display: block;
   align-items: center;
+  justify-content: center;
 
-  .imagem {
-    margin-right: 32px;
-
-    img {
-      width: 280px;
-      height: 280px;
-      max-width: 100%;
-    }
+  header {
+    padding-top: 8px;
+    padding-right: 8px;
   }
-
-  .content {
+  .popup {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 14px 32px 32px 32px;
+
+    .imagem {
+      img {
+        margin-right: 32px;
+        width: 280px;
+        height: 280px;
+        object-fit: cover;
+      }
+    }
+    .conteudo {
+      display: block;
+    }
   }
 
   header {
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    margin-bottom: 24px;
 
     img {
       cursor: pointer;
@@ -145,15 +147,14 @@ export const ModalContent = styled.div`
     line-height: 24px;
     margin-bottom: 24px;
   }
-
-  ${ButtonLink} {
-    width: fit-content;
-    padding: 8px 16px;
-    margin-top: 16px;
-    align-self: flex-start;
-    font-size: 14px;
-    color: ${cores.laranja};
-    background-color: ${cores.amarelo};
-    font-weight: bold;
-  }
+`
+export const ButtonPopUp = styled(Link)<Props>`
+  width: 218px;
+  height: 24px;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: ${cores.laranja};
+  background-color: ${cores.amarelo};
+  text-decoration: none;
 `

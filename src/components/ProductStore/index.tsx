@@ -8,7 +8,8 @@ import {
   Action,
   Capa,
   Modal,
-  ModalContent
+  ModalContent,
+  ButtonPopUp
 } from './styles'
 import zoom from '../../assets/images/mais_zoom_1.png'
 import close from '../../assets/images/close.png'
@@ -73,21 +74,21 @@ const ProductItem = ({ title, description, image, preco, porcao }: Props) => {
           <header>
             <img src={close} alt="Clique para fechar" onClick={closeModal} />
           </header>
-          <div className="imagem">
-            <img src={image} alt={title} />
+          <div className="popup">
+            <div className="imagem">
+              <img src={image} alt={title} />
+            </div>
+            <div className="conteudo">
+              <h2>{title}</h2>
+              <h4>
+                {description} <br /> <br />
+                Serve de: {porcao}
+              </h4>
+              <ButtonPopUp type="link" title="Adicionar ao carrinho" size="big">
+                {` Adicionar ao carrinho - R$${preco}`}
+              </ButtonPopUp>
+            </div>
           </div>
-          <div>
-            <h2>{title}</h2>
-          </div>
-          <div>
-            <h4>
-              {description}
-              Serve de: {porcao}
-            </h4>
-          </div>
-          <ButtonLink type="link" title="Adicionar ao carrinho" size="big">
-            {` Adicionar ao carrinho - ${preco}`}
-          </ButtonLink>
         </ModalContent>
         <div onClick={closeModal} className="overlay"></div>
       </Modal>
