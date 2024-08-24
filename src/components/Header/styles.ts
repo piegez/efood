@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { breakpoints } from '../../styles'
 
 export const HeaderBg = styled.header`
   height: 384px;
@@ -26,4 +27,8 @@ export const Title = styled.h2`
   line-height: 42px;
   padding-top: 138px;
   text-align: center;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 80%;
+  }
 `

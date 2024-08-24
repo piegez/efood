@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const RatingContainer = styled.div`
   color: ${cores.laranja};
@@ -12,5 +12,18 @@ export const RatingContainer = styled.div`
   position: absolute;
   img {
     margin-left: 8px;
+    width: 18px;
+    height: 18px;
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    top: 225px;
+    right: 12px;
+    font-size: 16px;
+    img {
+      margin-left: 2px;
+      width: 16px;
+      height: 16px;
+    }
   }
 `

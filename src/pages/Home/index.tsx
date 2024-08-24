@@ -1,9 +1,8 @@
 import Header from '../../components/Header'
 import ProductList from '../../components/ProductsList'
-import { useEffect, useState } from 'react'
+import { useGetRestaurantQuery } from '../../services/api'
 
 export type Rest = {
-  map(arg0: (menu: any) => void): import('react').ReactNode
   id: number
   titulo: string
   destacado?: boolean
@@ -14,7 +13,10 @@ export type Rest = {
   cardapio: Cardapio[]
 }
 
-interface Cardapio {
+export interface Cardapio {
+  categoria: string
+  nota: string
+  itens: Cardapio[]
   capa: string
   foto: string
   preco: number
@@ -25,16 +27,14 @@ interface Cardapio {
 }
 
 const Home = () => {
-  const [pratos, setPratos] = useState<Rest[]>([])
-  useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
-      .then((res) => res.json())
-      .then((res) => setPratos(res))
-  }, [])
+  const { data: pratos } = useGetRestaurantQuery()
+
+  const restauranteArray: Rest[] = Array.isArray(pratos) ? pratos : []
+
   return (
     <>
       <Header />
-      <ProductList restaurante={pratos} />
+      <ProductList restaurante={restauranteArray} />
     </>
   )
 }

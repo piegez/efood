@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const FooterStyle = styled.div`
   font-size: 10px;
@@ -26,4 +26,8 @@ export const Text = styled.div`
   width: 480px;
   padding-bottom: 40px;
   text-align: center;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 80%;
+  }
 `

@@ -13,6 +13,10 @@ import {
 } from './styles'
 import zoom from '../../assets/images/mais_zoom_1.png'
 import close from '../../assets/images/close.png'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
+import { add, clearAlert, open } from '../../store/reducers/cart'
+import { Cardapio } from '../../pages/Home'
 
 type Props = {
   title: string
@@ -27,7 +31,14 @@ interface ModalState {
   isVisible: boolean
 }
 
-const ProductItem = ({ title, description, image, preco, porcao }: Props) => {
+const ProductItem = ({
+  id,
+  title,
+  description,
+  image,
+  preco,
+  porcao
+}: Props) => {
   const [modal, setModal] = useState<ModalState>({
     isVisible: false
   })
@@ -51,6 +62,32 @@ const ProductItem = ({ title, description, image, preco, porcao }: Props) => {
     return descricao
   }
 
+  const dispatch = useDispatch()
+  const alertMessage = useSelector(
+    (state: RootReducer) => state.cart.alertMessage
+  )
+
+  const addToCart = () => {
+    const item: Cardapio = {
+      categoria: '', // Adapte conforme necessário
+      nota: '', // Adapte conforme necessário
+      itens: [], // Adapte conforme necessário
+      capa: image,
+      foto: image,
+      preco,
+      id,
+      nome: title,
+      descricao: description,
+      porcao
+    }
+    dispatch(add(item))
+    dispatch(open())
+    if (alertMessage) {
+      alert(alertMessage)
+      dispatch(clearAlert())
+    }
+  }
+
   return (
     <>
       <Card>
@@ -64,7 +101,11 @@ const ProductItem = ({ title, description, image, preco, porcao }: Props) => {
         </Image>
         <Titulo>{title}</Titulo>
         <Descricao>{getDescricao(description)}</Descricao>
-        <ButtonLink type="link" title="Adicionar ao carrinho">
+        <ButtonLink
+          type="link"
+          title="Adicionar ao carrinho"
+          onClick={addToCart}
+        >
           Adicionar ao carrinho
         </ButtonLink>
       </Card>
@@ -84,7 +125,12 @@ const ProductItem = ({ title, description, image, preco, porcao }: Props) => {
                 {description} <br /> <br />
                 Serve de: {porcao}
               </h4>
-              <ButtonPopUp type="link" title="Adicionar ao carrinho" size="big">
+              <ButtonPopUp
+                type="link"
+                title="Adicionar ao carrinho"
+                size="big"
+                onClick={addToCart}
+              >
                 {` Adicionar ao carrinho - R$${preco}`}
               </ButtonPopUp>
             </div>
