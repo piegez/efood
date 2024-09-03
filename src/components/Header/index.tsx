@@ -1,14 +1,14 @@
-import { HeaderBg, HeaderContent, Title } from './styles'
-import fundoheader from '../../assets/images/fundoheader.png'
+import * as S from './styles'
+import backgroundheader from '../../assets/images/fundoheader.png'
 import logo from '../../assets/images/logo.png'
 
 const Header = () => (
-  <HeaderBg style={{ backgroundImage: `url(${fundoheader})` }}>
-    <HeaderContent>
+  <S.HeaderBg style={{ backgroundImage: `url(${backgroundheader})` }}>
+    <S.HeaderContent>
       <img src={logo} alt="EFOOD" />
-      <Title>Viva experiências gastronômicas no conforto da sua casa</Title>
-    </HeaderContent>
-  </HeaderBg>
+      <S.Title>Viva experiências gastronômicas no conforto da sua casa</S.Title>
+    </S.HeaderContent>
+  </S.HeaderBg>
 )
 
 export default Header

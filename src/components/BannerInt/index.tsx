@@ -1,21 +1,20 @@
-import { Rest } from '../../pages/Home'
-import { Descricao, ImageContent, Imagem, MainContent, Titulo } from './styles'
+import * as S from './styles'
 
 type Props = {
   banner: Rest
 }
 
 const Banner = ({ banner }: Props) => (
-  <Imagem style={{ backgroundImage: `url(${banner.capa})` }}>
+  <S.Image style={{ backgroundImage: `url(${banner.capa})` }}>
     <div className="container">
-      <MainContent>
-        <ImageContent>
-          <Descricao>{banner.tipo}</Descricao>
-          <Titulo>{banner.titulo}</Titulo>
-        </ImageContent>
-      </MainContent>
+      <S.MainContent>
+        <S.ImageContent>
+          <S.Description>{banner.tipo}</S.Description>
+          <S.Title>{banner.titulo}</S.Title>
+        </S.ImageContent>
+      </S.MainContent>
     </div>
-  </Imagem>
+  </S.Image>
 )
 
 export default Banner

@@ -1,12 +1,13 @@
-import { ButtonContainer, ButtonLink } from './styles'
+import * as S from './styles'
 
 export type Props = {
-  type: 'button' | 'link'
+  type: 'button' | 'link' | 'submit'
   title: string
   to?: string
   onClick?: () => void
   size?: 'small' | 'big'
   children: string
+  disabled?: boolean
 }
 
 const Button = ({
@@ -19,18 +20,18 @@ const Button = ({
 }: Props) => {
   if (type === 'button') {
     return (
-      <ButtonContainer
+      <S.ButtonContainer
         type="button"
         title={title}
         size={size}
         onClick={onClick}
       >
         {children}
-      </ButtonContainer>
+      </S.ButtonContainer>
     )
   }
   return (
-    <ButtonLink
+    <S.ButtonLink
       type="button"
       title={title}
       size={size}
@@ -38,7 +39,7 @@ const Button = ({
       to={to as string}
     >
       {children}
-    </ButtonLink>
+    </S.ButtonLink>
   )
 }
 

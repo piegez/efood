@@ -1,15 +1,15 @@
-import { FooterStyle, Logo, Social, Text } from './style'
+import * as S from './style'
 import logo from '../../assets/images/logo.png'
 import instagram from '../../assets/images/instagram.png'
 import facebook from '../../assets/images/facebook.png'
 import twitter from '../../assets/images/twitter.png'
 
 const Footer = () => (
-  <FooterStyle>
-    <Logo>
+  <S.FooterStyle>
+    <S.Logo>
       <img src={logo} alt="EFOOD" />
-    </Logo>
-    <Social>
+    </S.Logo>
+    <S.Social>
       <a href="#">
         <img src={instagram} alt="INSTAGRAM" />
       </a>
@@ -19,13 +19,13 @@ const Footer = () => (
       <a href="#">
         <img src={twitter} alt="TWITTER" />
       </a>
-    </Social>
-    <Text>
-      A efood é uma Textlataforma para divulgação de estabelecimentos, a
+    </S.Social>
+    <S.Text>
+      A efood é uma plataforma para divulgação de estabelecimentos, a
       responsabilidade pela entrega, qualidade dos produtos é toda do
       estabelecimento contratado.{' '}
-    </Text>
-  </FooterStyle>
+    </S.Text>
+  </S.FooterStyle>
 )
 
 export default Footer

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const MainContent = styled.div`
   height: 100%;
@@ -9,7 +9,7 @@ export const MainContent = styled.div`
   justify-content: center;
 `
 
-export const Imagem = styled.div`
+export const Image = styled.div`
   position: relative;
   display: block;
   height: 280px;
@@ -52,17 +52,17 @@ export const ImageContent = styled.div`
   justify-content: space-between;
 `
 
-export const Titulo = styled.h2`
+export const Title = styled.h2`
   font-size: 32px;
-  color: ${cores.branco};
+  color: ${colors.white};
   font-weight: 900;
   margin: 0;
   padding-bottom: 32px;
 `
 
-export const Descricao = styled.p`
+export const Description = styled.p`
   font-size: 32px;
-  color: ${cores.branco};
+  color: ${colors.white};
   margin: 0;
   font-weight: 100;
   padding-top: 25px;

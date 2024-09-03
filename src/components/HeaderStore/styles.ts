@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const Header2Bg = styled.header`
   font-weight: bold;
@@ -13,7 +13,7 @@ export const Header2Bg = styled.header`
 
   a {
     text-decoration: none;
-    color: ${cores.laranja};
+    color: ${colors.orange};
     font-weight: bold;
     font-size: 18px;
   }

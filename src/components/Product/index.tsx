@@ -1,11 +1,12 @@
-import { ButtonLink } from '../Button/styles'
 import Rating from '../Rating'
 import Tag from '../Tags'
-import { Card, Descricao, Infos, Titulo, Image, Destaque } from './styles'
+
+import { ButtonLink } from '../Button/styles'
+import * as S from './styles'
 
 type Props = {
   title: string
-  description: string
+  descricao: string
   infos: string
   image: string
   rating: string
@@ -14,39 +15,39 @@ type Props = {
 }
 const Product = ({
   title,
-  description,
+  descricao,
   infos,
   image,
   rating,
   id,
   destacado
 }: Props) => {
-  const getDescricao = (descricao: string) => {
+  const getDescription = (descricao: string) => {
     if (descricao.length > 248) {
       return descricao.slice(0, 240) + '...'
     }
     return descricao
   }
   return (
-    <Card>
-      <Image>
+    <S.Card title="Clique aqui para ver mais detalhes do prato">
+      <S.Image>
         <img src={image} alt={title} />
-      </Image>
-      <Infos>
+      </S.Image>
+      <S.Infos>
         {destacado && (
-          <Destaque>
+          <S.Highlighted>
             <span>Destaque do dia</span>
-          </Destaque>
+          </S.Highlighted>
         )}
         <Tag key={infos}>{infos}</Tag>
-      </Infos>
+      </S.Infos>
       <Rating>{rating}</Rating>
-      <Titulo>{title}</Titulo>
-      <Descricao>{getDescricao(description)}</Descricao>
+      <S.Title>{title}</S.Title>
+      <S.Description>{getDescription(descricao)}</S.Description>
       <ButtonLink type="link" to={`/restaurantes/${id}`} title="Saiba mais">
         Saiba mais
       </ButtonLink>
-    </Card>
+    </S.Card>
   )
 }
 

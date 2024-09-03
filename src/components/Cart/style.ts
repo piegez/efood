@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
-import { ButtonPopUp } from '../ProductStore/styles'
+import { colors } from '../../styles'
 import fechar from '../../assets/images/lixeira-de-reciclagem 1.png'
 
 export const Overlay = styled.div`
@@ -28,27 +27,39 @@ export const CartContainer = styled.div`
 `
 
 export const Sidebar = styled.aside`
-  background-color: ${cores.laranja};
+  background-color: ${colors.orange};
   z-index: 1;
   padding: 32px 16px 0 16px;
   max-width: 360px;
   width: 100%;
 
-  ${ButtonPopUp} {
+  .cart-container button {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 4px 0;
+    margin: 8px 0;
     max-width: none;
-    font-size: 16px;
+    font-size: 14px;
+    color: ${colors.orange};
+    background-color: ${colors.yellow};
+    border: none;
+    cursor: pointer;
+  }
+
+  .empty-text {
+    font-size: 14px;
+    line-height: 22px;
+    color: ${colors.white};
+    text-align: center;
   }
 `
 
 export const CartItem = styled.li`
   display: flex;
-  background-color: ${cores.amarelo};
+  background-color: ${colors.yellow};
   padding: 8px 8px 12px 8px;
   min-height: 10;
   position: relative;
@@ -85,7 +96,7 @@ export const CartItem = styled.li`
 `
 
 export const Total = styled.p`
-  color: ${cores.amareloClaro};
+  color: ${colors.lightYellow};
   padding: 40px 0 16px 0;
   font-size: 14px;
   font-weight: 700;

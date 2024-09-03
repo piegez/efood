@@ -1,26 +1,17 @@
 import { useState } from 'react'
-import { ButtonLink } from '../Button/styles'
-import {
-  Card,
-  Descricao,
-  Titulo,
-  Image,
-  Action,
-  Capa,
-  Modal,
-  ModalContent,
-  ButtonPopUp
-} from './styles'
-import zoom from '../../assets/images/mais_zoom_1.png'
-import close from '../../assets/images/close.png'
 import { useDispatch, useSelector } from 'react-redux'
+
 import { RootReducer } from '../../store'
 import { add, clearAlert, open } from '../../store/reducers/cart'
-import { Cardapio } from '../../pages/Home'
+
+import { ButtonLink } from '../Button/styles'
+import * as S from './styles'
+import zoom from '../../assets/images/mais_zoom_1.png'
+import close from '../../assets/images/close.png'
 
 type Props = {
   title: string
-  description: string
+  descricao: string
   image: string
   id: number
   preco: number
@@ -31,14 +22,7 @@ interface ModalState {
   isVisible: boolean
 }
 
-const ProductItem = ({
-  id,
-  title,
-  description,
-  image,
-  preco,
-  porcao
-}: Props) => {
+const ProductItem = ({ id, title, descricao, image, preco, porcao }: Props) => {
   const [modal, setModal] = useState<ModalState>({
     isVisible: false
   })
@@ -55,7 +39,7 @@ const ProductItem = ({
     })
   }
 
-  const getDescricao = (descricao: string) => {
+  const getDescription = (descricao: string) => {
     if (descricao.length > 248) {
       return descricao.slice(0, 235) + '...'
     }
@@ -68,16 +52,16 @@ const ProductItem = ({
   )
 
   const addToCart = () => {
-    const item: Cardapio = {
-      categoria: '', // Adapte conforme necessário
-      nota: '', // Adapte conforme necessário
-      itens: [], // Adapte conforme necessário
+    const item: Menu = {
+      categoria: '',
+      nota: '',
+      itens: [],
       capa: image,
       foto: image,
       preco,
       id,
       nome: title,
-      descricao: description,
+      descricao: descricao,
       porcao
     }
     dispatch(add(item))
@@ -90,17 +74,17 @@ const ProductItem = ({
 
   return (
     <>
-      <Card>
-        <Image>
-          <Capa>
+      <S.Card>
+        <S.Image>
+          <S.Capa>
             <img src={image} alt={title} />
-          </Capa>
-          <Action>
+          </S.Capa>
+          <S.Action>
             <img src={zoom} alt="Clique para maximizar" onClick={openModal} />
-          </Action>
-        </Image>
-        <Titulo>{title}</Titulo>
-        <Descricao>{getDescricao(description)}</Descricao>
+          </S.Action>
+        </S.Image>
+        <S.Title>{title}</S.Title>
+        <S.Description>{getDescription(descricao)}</S.Description>
         <ButtonLink
           type="link"
           title="Adicionar ao carrinho"
@@ -108,10 +92,10 @@ const ProductItem = ({
         >
           Adicionar ao carrinho
         </ButtonLink>
-      </Card>
+      </S.Card>
 
-      <Modal className={modal.isVisible ? 'visible' : ''}>
-        <ModalContent className="container">
+      <S.Modal className={modal.isVisible ? 'visible' : ''}>
+        <S.ModalContent className="container">
           <header>
             <img src={close} alt="Clique para fechar" onClick={closeModal} />
           </header>
@@ -122,22 +106,22 @@ const ProductItem = ({
             <div className="conteudo">
               <h2>{title}</h2>
               <h4>
-                {description} <br /> <br />
+                {descricao} <br /> <br />
                 Serve de: {porcao}
               </h4>
-              <ButtonPopUp
+              <S.ButtonPopUp
                 type="link"
                 title="Adicionar ao carrinho"
                 size="big"
                 onClick={addToCart}
               >
                 {` Adicionar ao carrinho - R$${preco}`}
-              </ButtonPopUp>
+              </S.ButtonPopUp>
             </div>
           </div>
-        </ModalContent>
+        </S.ModalContent>
         <div onClick={closeModal} className="overlay"></div>
-      </Modal>
+      </S.Modal>
     </>
   )
 }

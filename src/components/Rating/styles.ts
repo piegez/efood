@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const RatingContainer = styled.div`
-  color: ${cores.laranja};
+  color: ${colors.orange};
   font-size: 18px;
   font-weight: 700;
   padding: 4px 6px;

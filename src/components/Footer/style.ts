@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const FooterStyle = styled.div`
   font-size: 10px;
-  background-color: ${cores.amarelo};
+  background-color: ${colors.yellow};
   display: flex;
   justify-content: center;
   align-items: center;

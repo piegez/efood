@@ -1,6 +1,6 @@
-import { Rest } from '../../pages/Home'
 import ProductItem from '../ProductStore'
-import { Container, List } from './styles'
+
+import * as S from './styles'
 
 export type Props = {
   menu: Rest
@@ -8,13 +8,13 @@ export type Props = {
 
 const ProductListStore = ({ menu }: Props) => {
   return (
-    <Container>
+    <S.Container>
       <div className="container">
-        <List>
+        <S.List>
           {menu.cardapio.map((menu) => (
             <ProductItem
               key={''}
-              description={menu.descricao}
+              descricao={menu.descricao}
               image={menu.foto}
               title={menu.nome}
               id={menu.id}
@@ -22,9 +22,9 @@ const ProductListStore = ({ menu }: Props) => {
               porcao={menu.porcao}
             />
           ))}
-        </List>
+        </S.List>
       </div>
-    </Container>
+    </S.Container>
   )
 }
 

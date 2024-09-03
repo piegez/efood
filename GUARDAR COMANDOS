@@ -4,3 +4,21 @@ to="/endereco"
 title="descricao do link">
 Link
 </Button>
+
+onClick={() => setCurrentState('delivery')}
+
+
+<S.Row>
+  <Button
+    type="button"
+    onClick={onBackToCart}
+    title="Voltar para o carrinho"
+  >
+    Voltar para o carrinho
+  </Button>
+</S.Row>
+
+
+interface CheckoutProps {
+  onBackToCart?: () => void
+}

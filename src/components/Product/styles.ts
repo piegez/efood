@@ -1,11 +1,11 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 import { TagContainer } from '../Tags/styles'
 import { ButtonLink } from '../Button/styles'
 
 export const Card = styled.div`
-  background-color: ${cores.branco};
-  box-shadow: inset 0 0 0 1px ${cores.laranja};
+  background-color: ${colors.white};
+  box-shadow: inset 0 0 0 1px ${colors.orange};
   margin-bottom: 48px;
   position: relative;
 
@@ -20,14 +20,14 @@ export const Card = styled.div`
   }
 `
 
-export const Titulo = styled.h3`
+export const Title = styled.h3`
   font-size: 18px;
   display: block;
   margin-top: 8px;
   margin-left: 8px;
 `
 
-export const Descricao = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   font-weight: 400;
   line-height: 22px;
@@ -49,9 +49,9 @@ export const Image = styled.div`
   }
 `
 
-export const Destaque = styled.div`
-  background-color: ${cores.laranja};
-  color: ${cores.amareloClaro};
+export const Highlighted = styled.div`
+  background-color: ${colors.orange};
+  color: ${colors.lightYellow};
   font-size: '12px';
   weight: 700;
   padding: 4px 6px;

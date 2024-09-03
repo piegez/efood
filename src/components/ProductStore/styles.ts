@@ -1,19 +1,19 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 import { ButtonLink } from '../Button/styles'
 import { Props } from '../Button'
 import { Link } from 'react-router-dom'
 
 export const Card = styled.div`
-  background-color: ${cores.laranja};
+  background-color: ${colors.orange};
   margin-bottom: 32px;
   padding: 8px;
 
   ${ButtonLink} {
     font-size: 14px;
     text-align: center;
-    color: ${cores.laranja};
-    background-color: ${cores.amarelo};
+    color: ${colors.orange};
+    background-color: ${colors.yellow};
     width: 304px;
     height: 24px;
     display: inline-block;
@@ -49,25 +49,25 @@ export const Image = styled.div`
     ${Action} {
       opacity: 1;
       transition: opacity 0.5s ease;
-      cursor: pointer;
+      cursor: zoom-in;
     }
   }
 `
-export const Titulo = styled.h3`
+export const Title = styled.h3`
   font-size: 16px;
   display: block;
   padding: 8px 0px 8px 0px;
-  color: ${cores.amarelo};
+  color: ${colors.yellow};
 `
 
-export const Descricao = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   font-weight: 400;
   line-height: 22px;
   display: block;
   max-width: 304px;
   padding-bottom: 8px;
-  color: ${cores.amarelo};
+  color: ${colors.yellow};
 `
 export const Modal = styled.div`
   position: fixed;
@@ -96,7 +96,7 @@ export const Modal = styled.div`
 
 export const ModalContent = styled.div`
   z-index: 1;
-  background-color: ${cores.laranja};
+  background-color: ${colors.orange};
   display: block;
   align-items: center;
   justify-content: center;
@@ -133,7 +133,7 @@ export const ModalContent = styled.div`
   }
 
   h2 {
-    color: ${cores.branco};
+    color: ${colors.white};
     font-size: 24px;
     font-weight: 900;
     line-height: 28px;
@@ -141,7 +141,7 @@ export const ModalContent = styled.div`
   }
 
   h4 {
-    color: ${cores.branco};
+    color: ${colors.white};
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -154,7 +154,7 @@ export const ButtonPopUp = styled(Link)<Props>`
   padding: 4px 8px;
   font-size: 14px;
   font-weight: bold;
-  color: ${cores.laranja};
-  background-color: ${cores.amarelo};
+  color: ${colors.orange};
+  background-color: ${colors.yellow};
   text-decoration: none;
 `
